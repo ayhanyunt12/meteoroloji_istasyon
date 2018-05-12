@@ -1,0 +1,146 @@
+
+.weather-flexbox{
+    background: #56CCF2 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-flexbox-logo-container{
+    margin-top: 64px;
+}
+
+.weather-flexbox-day-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weather-flexbox-day-container p{
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: white;
+    font-weight: bold;
+}
+
+.weather-flexbox-temperature-container p{
+    font-size: 30px;
+    margin-top: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.weather-flexbox-info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    color: #03A9F4 !important;
+    margin-top: 8px;
+    margin-bottom: 32px;
+}
+
+.middleSegment{
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.weather-flexbox-info-grid{
+    width: 80%;
+}
+
+.vertical-align-img{
+    padding-left: 2px;
+    padding-right: 2px;
+    vertical-align: text-bottom;
+}
+
+.weather-report-top-container .ui.pointing.secondary.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weather-report-top-container .item{
+    color: #757575 !important;
+}
+
+.weather-report-top-container .active.item{
+    color: #535353 !important;
+}
+
+.tab-pane-container{
+    background: #56CCF2!important;
+}
+
+.weather-flexbox-info-header{
+    color: white;
+}
+
+.weather-flexbox-container{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.hourly-data-table-container tbody{
+    background: #56CCF2;
+}
+
+.hourly-data-table-container thead{
+    background: #569fc6;
+}
+
+.hourly-data-table-container table{
+    font-size: 16px;
+}
+
+.weather-graph-container{
+    background: #56CCF2;
+    color: white;
+    margin-top: 32px;
+}
+
+.weather-graph-container-segment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.weather-graph-container-segment .recharts-tooltip-wrapper{
+    color: black;
+}
+
+.weather-graph-container-segment .recharts-tooltip-item{
+    color: black!important;
+}
+
+.weather-graph-container-segment .recharts-cartesian-axis-tick-value{
+    fill: rgb(255, 255, 255) !important;
+}
+
+.recharts-responsive-container{
+    margin-right: 64px;
+}
+
+.weather-graph-container-segment .recharts-cartesian-axis{
+    fill: rgb(255, 255, 255) !important;
+}
+
+.change-day-icon{
+    align-self: center;
+}
+
+.change-day-icon:hover{
+    color: black!important;
+}
+
+.decrease-day{
+    margin-right: 32px !important;
+}
+
+.increase-day{
+    margin-left: 32px !important;
+}
