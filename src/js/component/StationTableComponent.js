@@ -7,32 +7,77 @@ import DeleteModalComponent from "./modalComponents/DeleteModalComponent"
 
 
 class StationTableComponent extends Component {
+    /**
+     *
+     * @type {{openAddModal: boolean, openEditModal: boolean, openDeleteModal: boolean, selectedId: number, selectedStation: number}}
+     */
     state = {openAddModal: false, openEditModal: false, openDeleteModal: false, selectedId: 0, selectedStation: -1};
 
+    /**
+     * when user click 'İstasyon Ekle' button this function will be fired
+     * this function set openAddModal state to true and modal will be opened
+     * @returns {function()}
+     */
     showAddModal = () => () => {
         this.setState({openAddModal: true});
     };
 
+    /**
+     * when user click 'Düzenle' button this function will be fired
+     * this function set openEditModal state to true and modal will be opened
+     * @param id    indicate which station will be edited
+     * @returns {function()}
+     */
     showEditModal = (id) => () => {
         this.setState({openEditModal: true, selectedId: id});
     };
 
+    /**
+     * when user click 'Sil' button this function will be fired
+     * this function set openDeleteModal state to true and modal will be opened
+     * @param id    indicate which station will be deleted
+     * @returns {function()}
+     */
     showDeleteModal = (id) => () => {
         this.setState({openDeleteModal: true, selectedId: id});
     };
 
+    /**
+     * when user close any of the modal this function will be fired
+     * @returns {void|*}
+     */
     close = () => this.setState({openAddModal: false, openEditModal: false, openDeleteModal: false});
 
+    /**
+     * when user click 'Kaydet' button in add modal this function will be fired
+     * and call handleSave that comes from props
+     * @param lng   longitude value of station
+     * @param lat   latitude value of station
+     * @param name  name value of station
+     */
     handleSave = (lng, lat, name) => {
         this.close();
-        this.props.handleSaveToDB(lng, lat, name);
+        this.props.handleSave(lng, lat, name);
     };
 
+    /**
+     * when user click 'Kaydet' button in edit modal this function will be fired
+     * and call handleUpdate that comes from props
+     * @param name  new name value of station
+     * @param id    indicate which station will be updated
+     * @param lng   new longitude value of station
+     * @param ltd   new latitude value of station
+     */
     handleUpdate = (name, id, lng, ltd) => {
         this.close();
         this.props.handleUpdate(name, id, lng, ltd);
     };
 
+    /**
+     * When user click 'Sil' button in delete modal this function will be fired
+     * and call handleDelete that comes from props
+     * @param id    indicate which station will be deleted
+     */
     handleDelete = (id) => {
         this.close();
         this.props.handleDelete(id);
@@ -59,6 +104,11 @@ class StationTableComponent extends Component {
 
     });
 
+    /**
+     * this function will be fired when user selects a checkbox from table
+     * we need to unchecked all checkbox and check the clicked one
+     * @param e
+     */
     handleCheckboxToggle = (e) => {
         let id;
         if (!e.target.dataset.value) {

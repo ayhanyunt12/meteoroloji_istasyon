@@ -7,6 +7,12 @@ let name = '';
 
 class AddModalComponent extends Component {
     state = {lng: 0, ltd: 0};
+    /**
+     * when user select a new position to station in add modal
+     * this function will be fired and set states
+     * @param lng
+     * @param ltd
+     */
     changeLngLtd = (lng, ltd) => {
         this.setState({lng: lng, ltd: ltd});
     };
@@ -16,7 +22,6 @@ class AddModalComponent extends Component {
     };
 
     render() {
-        let displayErrorLabel = '';
         if (!this.props.stationFetched) {
             return (null)
         }

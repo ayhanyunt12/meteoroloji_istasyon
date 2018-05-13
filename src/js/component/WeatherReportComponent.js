@@ -9,6 +9,12 @@ import DailyDataComponent from './tabComponents/DailyDataComponent'
 import HourlyDataComponent from './tabComponents/HourlyDataComponent'
 import HourlyGraphComponent from "./tabComponents/HourlyGraphComponent"
 
+/**
+ * function that create tab panes
+ * @param props
+ * @param index
+ * @returns {Array}
+ */
 const getPanes = (props, index) => {
     let paneArray = [];
     paneArray.push({
@@ -41,6 +47,12 @@ const getPanes = (props, index) => {
     return paneArray;
 };
 
+/**
+ * select image according to weather situations
+ * @param stationData
+ * @param index
+ * @returns {*}
+ */
 const getImage = (stationData, index) => {
     /**
      * for temperatures
@@ -68,7 +80,6 @@ const getImage = (stationData, index) => {
             )
         }
     }
-
 };
 
 
@@ -80,6 +91,10 @@ class WeatherReportComponent extends Component {
         };
     }
 
+    /**
+     * when user click day change icons this function will be fired
+     * @param e
+     */
     handleIconClick = (e) => {
         let maxSize = this.props.stationData.data_day.time.length;
         if (e.target.dataset.value === 'increase') {
@@ -94,6 +109,9 @@ class WeatherReportComponent extends Component {
     };
 
     render() {
+        /**
+         * when there is not a station, or there is not any selected station
+         */
         if (!this.props.dataFetched || this.props.stations.length === 0) {
             return (
                 <h3 align="center">

@@ -8,7 +8,15 @@ import {
     withScriptjs,
 } from 'react-google-maps';
 
-
+/**
+ * create the marker on the map
+ * @param stations  all stations that will be displayed in the map
+ * @param draggable marker's draggable value
+ * @param onChange  this function will be used in editing existing station,
+ *                  when user change position of marker this function will be fired
+ * @param onMarkerClick when this function will be used for displaying station data
+ *                  when user click the marker this function will be fired
+ */
 const getMarker = (stations, draggable, onChange, onMarkerClick) => stations.map(station => {
     return (<Marker
         key={station.id}

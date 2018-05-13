@@ -7,6 +7,11 @@ import "../../../css/style.css"
 class EditModalComponent extends Component {
     state = {lng: 0, ltd: 0, name:''};
 
+    /**
+     * when edit modal will be opened we need name and coordinates
+     * this function set the properties of station to state
+     * @param newProps
+     */
     componentWillReceiveProps(newProps) {
         newProps.stations.map(station => {
             if (newProps.selectedId === station.public_id){

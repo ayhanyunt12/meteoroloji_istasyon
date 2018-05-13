@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const localUrl = "http://172.104.135.186:5000";
-//const localUrl = "http://127.0.0.1:5000";
+//const localUrl = "http://172.104.135.186:5000";
+const localUrl = "http://127.0.0.1:5000";
 
 export function fetchStations() {
     return function (dispatch) {
