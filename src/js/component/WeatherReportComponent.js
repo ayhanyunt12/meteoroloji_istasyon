@@ -94,7 +94,7 @@ class WeatherReportComponent extends Component {
     };
 
     render() {
-        if (!this.props.dataFetched) {
+        if (!this.props.dataFetched || this.props.stations.length === 0) {
             return (
                 <h3 align="center">
                     <p>Görüntülemek istediğiniz istasyonu seçmek için;</p>

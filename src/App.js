@@ -106,6 +106,7 @@ const App = (props) => {
                     <WeatherReportComponent
                         dataFetched = {dataFetched}
                         stationData = {station_data}
+                        stations={stations}
                     />
                 </div>
             </div>
