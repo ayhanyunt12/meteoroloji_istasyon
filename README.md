@@ -33,3 +33,6 @@ npm start
 * For map, I used react-google-maps(https://github.com/tomchentw/react-google-maps)
 
 * For backend of the project I created a Python Flask project (https://github.com/ayhanyunt12/meteoroloji_istasyon_flask.git)
+
+### Design
+* This project was developed as full responsive you can test it in browser mobile device support.
