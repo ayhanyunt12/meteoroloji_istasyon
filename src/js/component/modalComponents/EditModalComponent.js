@@ -3,15 +3,14 @@ import {Button, Form, Input, Modal} from 'semantic-ui-react'
 import MapComponent from '../MapComponent'
 import "../../../css/style.css"
 
-let name = '';
 
 class EditModalComponent extends Component {
-    state = {lng: 0, ltd: 0};
+    state = {lng: 0, ltd: 0, name:''};
 
     componentWillReceiveProps(newProps) {
         newProps.stations.map(station => {
             if (newProps.selectedId === station.public_id){
-                this.setState({lng:station.lang, ltd:station.latd})
+                this.setState({lng:station.lang, ltd:station.latd, name:station.name})
             }
         });
     }
@@ -21,15 +20,14 @@ class EditModalComponent extends Component {
     };
 
     setName = (e) => {
-        name = e.target.value;
+        this.setState({name:e.target.value})
     };
 
     render() {
         if (!this.props.stationFetched) {
             return (null)
         }
-        const {lng, ltd} = this.state;
-
+        const {lng, ltd, name} = this.state;
         return (
             <Modal size="large" open={this.props.open} onClose={this.props.onClose}>
                 <Modal.Header>
@@ -40,7 +38,7 @@ class EditModalComponent extends Component {
                     <div id="modal-station-name--container">
                         <Form>
                             <Form.Field inline>
-                                <Input type='text' placeholder='İstasyon ismi giriniz.'
+                                <Input type='text' placeholder='İstasyon ismi giriniz.' value={name}
                                        onChange={this.setName}/>
                             </Form.Field>
                         </Form>

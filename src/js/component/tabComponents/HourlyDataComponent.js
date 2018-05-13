@@ -3,7 +3,6 @@ import {Table} from "semantic-ui-react";
 
 const getTableRows = (stationData, dayData) => stationData.data_1h.time.map((time, index) => {
     if (time.split(' ')[0] == dayData) {
-        console.log('aa');
         return (
             <Table.Row key={index}>
                 <Table.Cell>{time.split(' ')[1]}</Table.Cell>

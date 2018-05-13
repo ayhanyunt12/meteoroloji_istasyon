@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverURL = "http://172.104.135.186";
+//const localUrl = "http://172.104.135.186:5000";
 const localUrl = "http://127.0.0.1:5000";
 
 export function fetchStations() {
@@ -37,7 +37,7 @@ export function updateStation(name, public_id, lng, ltd) {
     return function (dispatch) {
         dispatch({type: "UPDATE_STATION"});
         const url = localUrl + '/station';
-        axios.put("http://127.0.0.1:5000/station", {
+        axios.put(url, {
             name: name,
             public_id: public_id,
             lang: lng,
